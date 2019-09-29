@@ -1,35 +1,15 @@
-[![Build Status](https://travis-ci.org/p1ncet/obcast.png)](https://travis-ci.org/p1ncet/obcast)
+Installation
+------------
 
-# obcast
-PHP7 only. It allows to cast an object to boolean by implementing new internal interface <i>Boolable</i>
+`docker/.env` contains default settings (ports mainly) for docker containers.
 
-## Example
+Build: `docker-compose build`
 
-```php
-class Container implements Boolable {
-    public $data = [];
-    public function __toBoolean() 
-    {
-        return count($this->data) > 0;
-    }
-};
+Run: `SERVER_PORT=8888 docker-compose up`
 
-$obj = new Container();
+Enter console: `docker exec -it restest_php-fpm_1 bash`
 
-var_dump((bool) $obj);
-echo $obj ? "Not empty!\n" : "Empty!\n";
+Installation
+------------
 
-$obj->data = [1];
-
-var_dump((bool) $obj);
-echo $obj ? "Not Empty!\n" : "Empty!\n";
-```
-
-### Output
-
-```
-bool(false)
-Empty!
-bool(true)
-Not empty!
-```
+Here is a list of api endpoints: `tests/rest-api.http` 
