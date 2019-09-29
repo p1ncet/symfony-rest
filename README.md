@@ -9,7 +9,7 @@ Run: `SERVER_PORT=8888 docker-compose up`
 
 Enter console: `docker exec -it restest_php-fpm_1 bash`
 
-Installation
+Testing
 ------------
 
 Here is a list of api endpoints: `tests/rest-api.http` 
