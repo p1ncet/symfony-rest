@@ -1,0 +1,57 @@
+### Create a new message
+POST http://localhost:8888/api/messages
+Content-Type: application/json
+
+{
+    "message": "first message",
+    "author": "me",
+    "created": "2017-10-04T21:16:33.118Z"
+}
+
+### List of messages
+GET http://localhost:8888/api/messages
+
+### Get a message by id
+GET http://localhost:8888/api/messages/1
+
+### Update a message by id
+PUT http://localhost:8888/api/messages/1
+Content-Type: application/json
+
+{
+    "message": "fifth message modified",
+    "author": "me",
+    "created": "2017-10-04T21:16:33.118Z"
+}
+
+### Add a comment to a message
+POST http://localhost:8888/api/messages/1/comments
+Content-Type: application/json
+
+{
+    "comment": "first comment",
+    "author": "someone",
+    "created": "2018-10-04T21:16:33.118Z"
+}
+
+### List of comments
+GET http://localhost:8888/api/messages/1/comments
+
+### Get a comment by id
+GET http://localhost:8888/api/messages/1/comments/1
+
+### Update a comment by id
+PUT http://localhost:8888/api/messages/1/comments/1
+Content-Type: application/json
+
+{
+    "comment": "first comment modified",
+    "author": "someone",
+    "created": "2018-10-04T21:16:33.118Z"
+}
+
+### Delete a comment by id
+DELETE http://localhost:8888/api/messages/1/comments/1
+
+### Delete a message by id
+DELETE http://localhost:8888/api/messages/1
